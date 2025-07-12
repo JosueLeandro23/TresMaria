@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Botillería Las Tres María</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
+
+    body {
+      background-color: #0c0c1a; /* Azul oscuro muy profundo */
+      color: #e0e0f2; /* Blanco azulado sutil */
+      font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
+      background-attachment: fixed;
+    }
+
+    h1, h2 {
+      font-family: "Cinzel", serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .inicio-container {
+      position: relative;
+      background: linear-gradient(180deg, #1a1a2e 0%, #0c0c1a 100%);
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      overflow: hidden;
+      min-height: 280px;
+      border-bottom: 1px solid rgba(173, 216, 230, 0.1); /* Azul claro muy sutil */
+    }
+
+    .inicio-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-circulo {
+      width: 140px;
+      height: 140px;
+      border-radius: 9999px;
+      background: radial-gradient(circle at center, #2a2a4e, #1a1a2e);
+      border: 3px solid #8e44ad; /* Púrpura oscuro elegante */
+      box-shadow: 0 0 40px rgba(142, 68, 173, 0.7), inset 0 0 15px rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      animation: glowEffect 4s infinite ease-in-out;
+    }
+
+    @keyframes glowEffect {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 40px rgba(142, 68, 173, 0.7), inset 0 0 15px rgba(255, 255, 255, 0.1);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 60px rgba(177, 98, 207, 0.9), inset 0 0 20px rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    .logo-texto {
+      font-family: "Cinzel", serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #d2b4de; /* Lavanda suave */
+      text-shadow: 0 0 10px rgba(210, 180, 222, 0.8);
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      color: #e0e0f2;
+      text-shadow: 0 0 20px rgba(224, 224, 242, 0.7);
+      font-size: 3.2rem;
+    }
+
+    .tarjeta-producto {
+      background: linear-gradient(145deg, #1a1a2e, #0c0c1a);
+      border: 1px solid rgba(142, 68, 173, 0.4);
+      border-radius: 1.2rem;
+      padding: 1.8rem;
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tarjeta-producto::before {
+        content: '';
+        position: absolute;
+        top: -70%;
+        left: -70%;
+        width: 250%;
+        height: 250%;
+        background: radial-gradient(circle at center, rgba(142, 68, 173, 0.15) 0%, transparent 60%);
+        opacity: 0;
+        transform: rotate(30deg);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        pointer-events: none;
+    }
+
+    .tarjeta-producto:hover::before {
+        opacity: 1;
+        transform: scale(1.1) rotate(30deg);
+    }
+
+    .tarjeta-producto:hover {
+      transform: translateY(-8px) scale(1.03);
+      border-color: #b162cf; /* Púrpura más brillante */
+      box-shadow: 0 15px 35px rgba(177, 98, 207, 0.8), 0 0 30px rgba(177, 98, 207, 0.6);
+    }
+
+    .tarjeta-producto h3 {
+        font-family: "Cinzel", serif;
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: #d2b4de; /* Lavanda suave */
+        margin-bottom: 0.6rem;
+        text-shadow: 0 0 12px rgba(210, 180, 222, 0.7);
+        position: relative;
+        z-index: 1;
+    }
+
+    .tarjeta-producto p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.1rem;
+        color: #e0e0f2;
+        margin-bottom: 0.4rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .input {
+      background-color: #1a1a2e;
+      border: 1px solid rgba(142, 68, 173, 0.5);
+      padding: 14px 18px;
+      color: #e0e0f2;
+      border-radius: 0.6rem;
+      font-size: 1.05rem;
+      box-shadow: inset 0 0 8px rgba(142, 68, 173, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .input:focus {
+      outline: none;
+      border-color: #b162cf;
+      box-shadow: 0 0 10px rgba(177, 98, 207, 0.8), inset 0 0 10px rgba(177, 98, 207, 0.6);
+    }
+
+    .btn-panel {
+      background: linear-gradient(45deg, #8e44ad, #b162cf); /* Degradado púrpura */
+      color: #e0e0f2;
+      padding: 16px 32px;
+      border-radius: 40px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      box-shadow: 0 12px 25px rgba(142, 68, 173, 0.5);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-panel::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        transition: all 0.6s ease;
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    .btn-panel:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    .btn-panel:hover {
+      background: linear-gradient(45deg, #b162cf, #8e44ad);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 18px 35px rgba(177, 98, 207, 0.8);
+      color: #fff;
+    }
+
+    .detalle-tarjeta {
+      background: linear-gradient(160deg, #1a1a2e 0%, #2a2a4e 100%);
+      border: 2px solid #b162cf; /* Púrpura más brillante */
+      border-radius: 1.8rem;
+      padding: 3rem;
+      box-shadow: 0 0 60px rgba(142, 68, 173, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.9);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInScale 0.6s ease-out;
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .detalle-tarjeta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at top left, rgba(142, 68, 173, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    .detalle-tarjeta .pollita-message {
+      font-family: "Dancing Script", cursive;
+      font-size: 1.8rem;
+      color: #d2b4de; /* Lavanda suave */
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(210, 180, 222, 0.7);
+      position: relative;
+      z-index: 2;
+    }
+
+    .detalle-tarjeta .gracias-mama-message {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.1rem;
+      color: #a788b7; /* Tono de púrpura más suave */
+      margin-top: 3rem;
+      padding: 14px 28px;
+      border: 1px solid rgba(167, 136, 183, 0.6);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 500;
+      text-shadow: 0 0 6px rgba(167, 136, 183, 0.8);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(to right, rgba(167, 136, 183, 0.1) 0%, transparent 50%, rgba(167, 136, 183, 0.1) 100%);
+    }
+
+    .detalle-tarjeta .gracias-mama-message:hover {
+      background-color: rgba(167, 136, 183, 0.25);
+      color: #e0e0f2;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(167, 136, 183, 0.7);
+    }
+
+    .detalle-tarjeta h2 {
+      font-family: "Cinzel", serif;
+      font-size: 3.2rem;
+      color: #e0e0f2; /* Blanco azulado sutil */
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 25px rgba(224, 224, 242, 0.9);
+      position: relative;
+      z-index: 2;
+    }
+
+    .detalle-tarjeta p {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.25rem;
+      color: #e0e0f2;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .detalle-tarjeta .precio {
+      font-family: "Cinzel", serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #b162cf; /* Púrpura más brillante */
+      margin-top: 2rem;
+      text-shadow: 0 0 20px rgba(177, 98, 207, 0.9);
+      position: relative;
+      z-index: 2;
+    }
+
+    .edit-btn, .delete-btn {
+      background: linear-gradient(45deg, #a788b7, #b162cf); /* Degradado suave */
+      color: #0c0c1a;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 18px rgba(167, 136, 183, 0.5);
+    }
+
+    .edit-btn:hover {
+      background: linear-gradient(45deg, #b162cf, #a788b7);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(167, 136, 183, 0.8);
+    }
+
+    .delete-btn {
+      background: linear-gradient(45deg, #8e44ad, #b162cf); /* Degradado más intenso */
+      margin-left: 1.8rem;
+      box-shadow: 0 6px 18px rgba(142, 68, 173, 0.5);
+    }
+
+    .delete-btn:hover {
+      background: linear-gradient(45deg, #b162cf, #8e44ad);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(142, 68, 173, 0.8);
+    }
+
+    .edit-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: center;
+        margin-top: 2.5rem;
+    }
+
+    .edit-controls .input {
+        background-color: #0c0c1a;
+        border: 1px solid #8e44ad;
+        padding: 16px 22px;
+        color: #e0e0f2;
+        border-radius: 0.8rem;
+        font-size: 1.15rem;
+        width: 85%;
+        text-align: center;
+        box-shadow: 0 0 12px rgba(142, 68, 173, 0.4) inset;
+    }
+
+    .edit-controls .input:focus {
+        outline: none;
+        border-color: #b162cf;
+        box-shadow: 0 0 18px rgba(177, 98, 207, 0.7) inset;
+    }
+
+    .edit-controls .btn {
+        background: linear-gradient(90deg, #d2b4de, #b162cf); /* Degradado de lavanda a púrpura */
+        color: #0c0c1a;
+        padding: 14px 30px;
+        border-radius: 35px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 18px rgba(210, 180, 222, 0.7);
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .edit-controls .btn:hover {
+        background: linear-gradient(90deg, #b162cf, #d2b4de);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(210, 180, 222, 0.9);
+    }
+
+    .edit-controls .cancel-btn {
+        background: linear-gradient(90deg, #8e44ad, #a788b7); /* Degradado de púrpura a lila */
+        box-shadow: 0 6px 18px rgba(142, 68, 173, 0.5);
+        color: #e0e0f2;
+    }
+    .edit-controls .cancel-btn:hover {
+        background: linear-gradient(90deg, #a788b7, #8e44ad);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(142, 68, 173, 0.7);
+    }
+
+    .form-container {
+      background: linear-gradient(155deg, #1a1a2e, #0c0c1a);
+      border: 1px solid rgba(142, 68, 173, 0.6);
+      border-radius: 1.5rem;
+      padding: 3rem;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      position: relative;
+      overflow: hidden;
+      border: 2px dashed rgba(167, 136, 183, 0.6);
+    }
+
+    .form-container h2 {
+      font-family: "Cinzel", serif;
+      font-size: 2.2rem;
+      color: #d2b4de; /* Lavanda suave */
+      text-align: center;
+      margin-bottom: 1.8rem;
+      text-shadow: 0 0 15px rgba(210, 180, 222, 0.8);
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-container .input,
+    .form-container select {
+      background-color: #0c0c1a;
+      border: 1px solid #b162cf;
+      padding: 16px 22px;
+      color: #e0e0f2;
+      border-radius: 0.8rem;
+      font-size: 1.15rem;
+      width: 100%;
+      box-shadow: inset 0 0 10px rgba(177, 98, 207, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-container .input:focus,
+    .form-container select:focus {
+      outline: none;
+      border-color: #d2b4de;
+      box-shadow: inset 0 0 15px rgba(210, 180, 222, 0.5), 0 0 20px rgba(210, 180, 222, 0.7);
+    }
+
+    .form-container .btn {
+      background: linear-gradient(90deg, #b162cf, #8e44ad); /* Degradado más fuerte */
+      color: #e0e0f2;
+      padding: 18px 35px;
+      border-radius: 40px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      box-shadow: 0 12px 30px rgba(142, 68, 173, 0.7);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-container .btn:hover {
+      background: linear-gradient(90deg, #8e44ad, #b162cf);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 20px 45px rgba(142, 68, 173, 0.9);
+    }
+
+    .voice-btn {
+      background: linear-gradient(45deg, #a788b7, #d2b4de); /* Tonos más claros */
+      border: none;
+      color: #0c0c1a;
+      padding: 12px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.1rem;
+      margin-left: 10px;
+      border-radius: 0.6rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 12px rgba(167, 136, 183, 0.4);
+    }
+
+    .voice-btn:hover {
+      background: linear-gradient(45deg, #d2b4de, #a788b7);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(167, 136, 183, 0.6);
+    }
+
+    .voice-btn:focus {
+      outline: none;
+      box-shadow: 0 0 10px #d2b4de;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    .search-input-wrapper .input {
+      padding-right: 3.5rem;
+    }
+    .search-input-wrapper .search-icon {
+      position: absolute;
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #d2b4de;
+      font-size: 1.4rem;
+      pointer-events: none;
+    }
+
+    .datetime-widget {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      color: #a788b7; /* Tono de púrpura más suave */
+      text-align: center;
+      margin-top: 1.5rem;
+      text-shadow: 0 0 12px rgba(167, 136, 183, 0.8);
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(12, 12, 26, 0.8));
+      border-radius: 1rem;
+      padding: 1rem 2rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), inset 0 0 12px rgba(167, 136, 183, 0.3);
+      border: 1px solid rgba(167, 136, 183, 0.5);
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .datetime-widget .time {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #b162cf; /* Púrpura más brillante */
+      text-shadow: 0 0 15px rgba(177, 98, 207, 0.9);
+    }
+
+    .datetime-widget .date {
+      font-size: 1.1rem;
+      color: #e0e0f2;
+    }
+
+    .notification {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(45deg, #b162cf, #8e44ad); /* Degradado púrpura */
+      color: #e0e0f2;
+      padding: 2rem 3.5rem;
+      border-radius: 1.2rem;
+      font-family: "Cinzel", serif;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(142, 68, 173, 0.7);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease-out, visibility 0s linear 0.6s;
+      letter-spacing: 2.5px;
+      border: 2px solid #d2b4de; /* Lavanda suave */
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      justify-content: center;
+      align-items: center;
+      min-width: 350px;
+    }
+
+    .notification.show {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.6s ease-out;
+    }
+
+    .notification-buttons {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .notification-button {
+        background: linear-gradient(45deg, #d2b4de, #a788b7); /* Tonos de lavanda a lila */
+        color: #0c0c1a;
+        padding: 0.9rem 1.8rem;
+        border-radius: 0.6rem;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(167, 136, 183, 0.4);
+    }
+
+    .notification-button:hover {
+        background: linear-gradient(45deg, #a788b7, #d2b4de);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(167, 136, 183, 0.6);
+    }
+
+    .notification-button.cancel {
+        background: linear-gradient(45deg, #8e44ad, #b162cf); /* Degradado más oscuro */
+        color: #e0e0f2;
+        box-shadow: 0 4px 12px rgba(142, 68, 173, 0.4);
+    }
+
+    .notification-button.cancel:hover {
+        background: linear-gradient(45deg, #b162cf, #8e44ad);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(142, 68, 173, 0.6);
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 999;
+        display: none;
+    }
+  </style>
+</head>
+<body class="px-6 py-8">
+  <div class="inicio-container">
+    <div class="inicio-content text-center space-y-8 mb-12">
+      <div class="logo-circulo">
+        <div class="logo-texto">3M</div>
+      </div>
+      <h1 class="text-5xl font-bold">Botillería Las Tres María</h1>
+
+      <div class="datetime-widget mx-auto">
+        <div id="currentTime" class="time"></div>
+        <div id="currentDate" class="date"></div>
+      </div>
+
+      <div class="flex justify-center gap-8 mt-8">
+        <button class="btn-panel" onclick="togglePanel('panel-productos')">Productos</button>
+        <button class="btn-panel" onclick="togglePanel('panel-agregar')">Agregar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="panel-productos" class="hidden max-w-6xl mx-auto py-8">
+    <div class="mb-8 flex flex-col sm:flex-row sm:items-center gap-6">
+      <div class="search-input-wrapper w-full sm:w-1/2">
+        <input id="buscador" type="text" class="input w-full" placeholder="Buscar producto..." oninput="buscarProducto()">
+        <span class="search-icon">&#128269;</span>
+      </div>
+      <button class="voice-btn" onclick="startVoiceRecognition()">🎙️</button>
+      <select id="filtro" class="input w-full sm:w-1/4" onchange="buscarProducto()">
+        <option value="">Todos</option>
+        <option>Cerveza</option>
+        <option>Vino</option>
+        <option>Whisky</option>
+        <option>Vodka</option>
+        <option>Pisco</option>
+        <option>Ron</option>
+        <option>Tequila</option>
+        <option>Gin</option>
+        <option>Licor</option>
+        <option>Cidra</option>
+        <option>Espumante</option>
+        <option>Bebida Analcohólica</option>
+        <option>Agua Mineral</option>
+        <option>Jugo</option>
+        <option>Energética</option>
+        <option>Snack Dulce</option>
+        <option>Snack Salado</option>
+        <option>Hielo</option>
+        <option>Otro</option>
+      </select>
+    </div>
+    <div id="resultadoBusqueda" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+
+  <div id="panel-agregar" class="hidden max-w-lg mx-auto form-container py-8">
+    <h2>Nuevo Producto</h2>
+    <input id="nuevo-nombre" class="input" placeholder="Nombre del producto" />
+    <select id="nuevo-tipo" class="input">
+      <option>Cerveza</option>
+      <option>Vino</option>
+      <option>Whisky</option>
+      <option>Vodka</option>
+      <option>Pisco</option>
+      <option>Ron</option>
+      <option>Tequila</option>
+      <option>Gin</option>
+      <option>Licor</option>
+      <option>Cidra</option>
+      <option>Espumante</option>
+      <option>Bebida Analcohólica</option>
+      <option>Agua Mineral</option>
+      <option>Jugo</option>
+      <option>Energética</option>
+      <option>Snack Dulce</option>
+      <option>Snack Salado</option>
+      <option>Hielo</option>
+      <option>Otro</option>
+    </select>
+    <input id="nuevo-precio" class="input" type="number" placeholder="Precio en CLP" />
+    <button class="btn" onclick="agregarProducto()">Guardar Producto</button>
+  </div>
+
+  <div id="panel-detalle-producto" class="hidden fixed inset-0 bg-black bg-opacity-85 flex items-center justify-center p-6 z-50">
+    <div id="detalleProductoContenido" class="detalle-tarjeta max-w-xl w-full">
+      </div>
+  </div>
+
+  <div id="overlay" class="overlay"></div>
+
+  <div id="notification-container" class="notification"></div>
+
+  <script>
+    const productos = [
+      { nombre: 'Cristal', tipo: 'Cerveza', precio: 1200 },
+      { nombre: 'Gato Tinto', tipo: 'Vino', precio: 2500 },
+      { nombre: "Jack Daniel's", tipo: 'Whisky', precio: 15000 },
+      { nombre: 'Absolut', tipo: 'Vodka', precio: 10000 },
+      { nombre: 'Capel', tipo: 'Pisco', precio: 3000 },
+      { nombre: 'Corona', tipo: 'Cerveza', precio: 1800 },
+      { nombre: 'Altas Cumbres', tipo: 'Vino', precio: 4500 },
+      { nombre: 'Ballantine\'s Finest', tipo: 'Whisky', precio: 12000 },
+      { nombre: 'Smirnoff', tipo: 'Vodka', precio: 8500 },
+      { nombre: 'Mistral', tipo: 'Pisco', precio: 4000 },
+      { nombre: 'Heineken', tipo: 'Cerveza', precio: 1500 }
+    ];
+
+    let productoActualParaEditar = null;
+    let currentActivePanel = null;
+
+    function togglePanel(id) {
+      const panelProductos = document.getElementById('panel-productos');
+      const panelAgregar = document.getElementById('panel-agregar');
+      const panelDetalle = document.getElementById('panel-detalle-producto');
+      const targetPanel = document.getElementById(id);
+
+      if (!panelDetalle.classList.contains('hidden')) {
+        panelDetalle.classList.add('hidden');
+      }
+
+      if (currentActivePanel && currentActivePanel.id === id) {
+        targetPanel.classList.add('hidden');
+        currentActivePanel = null;
+      } else {
+        panelProductos.classList.add('hidden');
+        panelAgregar.classList.add('hidden');
+
+        targetPanel.classList.remove('hidden');
+        currentActivePanel = targetPanel;
+
+        if (id === 'panel-productos') {
+          buscarProducto();
+        }
+      }
+    }
+
+    function buscarProducto() {
+      const input = document.getElementById('buscador').value.toLowerCase().trim();
+      const filtro = document.getElementById('filtro').value;
+      const resultado = document.getElementById('resultadoBusqueda');
+      resultado.innerHTML = '';
+
+      const encontrados = productos.filter(p => {
+        return (
+          (p.nombre.toLowerCase().includes(input) || p.tipo.toLowerCase().includes(input) || p.precio.toString().includes(input)) &&
+          (filtro === '' || p.tipo === filtro)
+        );
+      });
+
+      if (encontrados.length > 0) {
+        encontrados.forEach((p) => {
+          const div = document.createElement('div');
+          div.className = 'tarjeta-producto';
+          div.innerHTML = `
+            <h3>${p.nombre}</h3>
+            <p>Tipo: ${p.tipo}</p>
+          `;
+          div.onclick = () => mostrarDetalleProducto(p);
+          resultado.appendChild(div);
+        });
+      } else {
+        resultado.innerHTML = '<p class="text-center text-d2b4de text-xl mt-8">No se encontraron productos que coincidan con la búsqueda.</p>';
+      }
+    }
+
+    function agregarProducto() {
+      const nombre = document.getElementById("nuevo-nombre").value.trim();
+      const tipo = document.getElementById("nuevo-tipo").value;
+      const precio = parseInt(document.getElementById("nuevo-precio").value);
+
+      if (nombre && tipo && !isNaN(precio) && precio > 0) {
+        productos.push({ nombre, tipo, precio });
+        document.getElementById("nuevo-nombre").value = "";
+        document.getElementById("nuevo-precio").value = "";
+        showNotification("Producto Agregado con Éxito");
+        document.getElementById('panel-agregar').classList.add('hidden');
+        currentActivePanel = null;
+      } else {
+        alert("Por favor, ingresa un nombre, selecciona un tipo y un precio válido (número positivo).");
+      }
+    }
+
+    function CLP(valor) {
+      return valor.toLocaleString("es-CL", {
+        style: "currency",
+        currency: "CLP",
+      });
+    }
+
+    function mostrarDetalleProducto(producto) {
+      productoActualParaEditar = producto;
+      const panelDetalle = document.getElementById('panel-detalle-producto');
+
+      document.getElementById('panel-productos').classList.add('hidden');
+      document.getElementById('panel-agregar').classList.add('hidden');
+      currentActivePanel = null;
+
+      renderizarDetalleProducto(producto);
+      panelDetalle.classList.remove('hidden');
+    }
+
+    function renderizarDetalleProducto(producto) {
+        const detalleContenido = document.getElementById('detalleProductoContenido');
+        detalleContenido.innerHTML = `
+            <p class="pollita-message">¡Oh, querida! Esto vale:</p>
+            <h2>${producto.nombre}</h2>
+            <p>Tipo: ${producto.tipo}</p>
+            <p class="precio" id="displayPrecio">Precio: ${CLP(producto.precio)}</p>
+            <div class="flex justify-center gap-6 mt-4">
+              <button class="edit-btn" onclick="habilitarEdicionPrecio()">Editar Precio</button>
+              <button class="delete-btn" onclick="confirmarEliminarProducto()">Eliminar Producto</button>
+            </div>
+            <p class="gracias-mama-message" onclick="cerrarDetalleProducto()">¡Gracias, Mamá!</p>
+        `;
+    }
+
+    function habilitarEdicionPrecio() {
+        const detalleContenido = document.getElementById('detalleProductoContenido');
+        const currentPrice = productoActualParaEditar.precio;
+
+        detalleContenido.innerHTML = `
+            <p class="pollita-message">Indica el nuevo valor, cariño:</p>
+            <h2>${productoActualParaEditar.nombre}</h2>
+            <p>Tipo: ${productoActualParaEditar.tipo}</p>
+            <div class="edit-controls">
+                <input type="number" id="inputNuevoPrecio" class="input" value="${currentPrice}" placeholder="Nuevo precio en CLP" min="1">
+                <button class="btn" onclick="guardarNuevoPrecio()">Guardar</button>
+                <button class="btn cancel-btn" onclick="cancelarEdicionPrecio()">Cancelar</button>
+            </div>
+            <p class="gracias-mama-message" onclick="cerrarDetalleProducto()">¡Gracias, Mamá!</p>
+        `;
+        document.getElementById('inputNuevoPrecio').focus();
+    }
+
+    function guardarNuevoPrecio() {
+        const inputNuevoPrecio = document.getElementById('inputNuevoPrecio');
+        const nuevoPrecio = parseInt(inputNuevoPrecio.value);
+
+        if (!isNaN(nuevoPrecio) && nuevoPrecio > 0) {
+            const index = productos.findIndex(p => p === productoActualParaEditar);
+            if (index !== -1) {
+                productos[index].precio = nuevoPrecio;
+                productoActualParaEditar.precio = nuevoPrecio;
+            }
+            renderizarDetalleProducto(productoActualParaEditar);
+            buscarProducto();
+            showNotification("Precio Actualizado");
+        } else {
+            alert("Por favor, ingresa un precio válido (número positivo).");
+            inputNuevoPrecio.focus();
+        }
+    }
+
+    function cancelarEdicionPrecio() {
+        renderizarDetalleProducto(productoActualParaEditar);
+    }
+
+    function confirmarEliminarProducto() {
+        showConfirmation(`¿Estás segura de querer eliminar "${productoActualParaEditar.nombre}"? Esto no se puede deshacer.`, () => {
+            const index = productos.findIndex(p => p === productoActualParaEditar);
+            if (index !== -1) {
+                productos.splice(index, 1);
+                showNotification("Producto Eliminado");
+                cerrarDetalleProducto();
+                buscarProducto();
+            }
+        });
+    }
+
+    function cerrarDetalleProducto() {
+      document.getElementById('panel-detalle-producto').classList.add('hidden');
+      productoActualParaEditar = null;
+      currentActivePanel = null;
+    }
+
+    let recognition;
+
+    function startVoiceRecognition() {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert("Tu navegador no soporta el reconocimiento de voz. Por favor, considera usar Google Chrome o Microsoft Edge para esta función.");
+        return;
+      }
+
+      recognition = new webkitSpeechRecognition();
+      recognition.lang = 'es-CL';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById('buscador').value = transcript;
+        buscarProducto();
+      };
+
+      recognition.onerror = function(event) {
+        console.error("Error en el reconocimiento de voz:", event.error);
+        if (event.error === 'no-speech') {
+            alert('No se detectó voz. Intenta de nuevo.');
+        } else if (event.error === 'not-allowed') {
+            alert('Permiso de micrófono denegado. Por favor, habilítalo en la configuración de tu navegador para usar la búsqueda por voz.');
+        } else {
+            alert('Ocurrió un error inesperado en el reconocimiento de voz: ' + event.error);
+        }
+      };
+
+      recognition.onend = function() {
+        console.log('Reconocimiento de voz finalizado.');
+      };
+
+      recognition.start();
+      console.log('Escuchando...');
+    }
+
+    function updateDateTime() {
+      const now = new Date();
+      const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+      document.getElementById('currentTime').textContent = now.toLocaleTimeString('es-CL', timeOptions);
+      document.getElementById('currentDate').textContent = now.toLocaleDateString('es-CL', dateOptions);
+    }
+
+    function showNotification(message) {
+      const notificationContainer = document.getElementById('notification-container');
+      const overlay = document.getElementById('overlay');
+
+      notificationContainer.innerHTML = `<div>${message}</div>`;
+      notificationContainer.classList.add('show');
+      overlay.style.display = 'block';
+
+      setTimeout(() => {
+        notificationContainer.classList.remove('show');
+        overlay.style.display = 'none';
+      }, 3000);
+    }
+
+    function showConfirmation(message, onConfirm) {
+        const notificationContainer = document.getElementById('notification-container');
+        const overlay = document.getElementById('overlay');
+
+        notificationContainer.innerHTML = `
+            <div>${message}</div>
+            <div class="notification-buttons">
+                <button class="notification-button" id="confirm-yes">Sí</button>
+                <button class="notification-button cancel" id="confirm-no">No</button>
+            </div>
+        `;
+        notificationContainer.classList.add('show');
+        overlay.style.display = 'block';
+
+        document.getElementById('confirm-yes').onclick = () => {
+            onConfirm();
+            notificationContainer.classList.remove('show');
+            overlay.style.display = 'none';
+        };
+
+        document.getElementById('confirm-no').onclick = () => {
+            notificationContainer.classList.remove('show');
+            overlay.style.display = 'none';
+        };
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('panel-productos').classList.add('hidden');
+      document.getElementById('panel-agregar').classList.add('hidden');
+      document.getElementById('panel-detalle-producto').classList.add('hidden');
+
+      updateDateTime();
+      setInterval(updateDateTime, 1000);
+    });
+  </script>
+</body>
+</html>
